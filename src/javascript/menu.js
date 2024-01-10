@@ -73,7 +73,7 @@ function dessertsFoods(){
     let food5 = new food_items('Puto Cheese', puto, 'Steamed rice cakes with cheese topping')
     let food6 = new food_items('Ube Halaya', ubehalaya, 'Sweet creamy dessert from purple yam' )
 
-    list.push(food1,food2,food3,food4, food4, food5, food6);
+    list.push(food1,food2,food3,food4, food5, food6);
     return list;
 }
 
@@ -87,7 +87,7 @@ function drinksFoods(){
     let food5 = new food_items('Buko Juice', bukojuice, 'Fresh coconut water served straight from the coconut')
     let food6 = new food_items('Mango Shake', mangoshake, 'Blended ripe mangoes with milk and ice')
 
-    list.push(food1,food2,food3,food4, food4, food5, food6);
+    list.push(food1,food2,food3,food4, food5, food6);
     return list;
 }
 
