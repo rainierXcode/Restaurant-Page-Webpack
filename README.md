@@ -2,6 +2,9 @@
 
 This project, built from [The Odin Project's curriculum](https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page), is a responsive and accessible restaurant page featuring navigation tabs.
 
+## :link: LIVE DEMO
+[Hacienda Secreta Restaurant](https://rainierxcode.github.io/Restaurant-Page-Webpack/)
+
  ## :bulb: Features
  * **Responsive Design**
  * **Accesibility**
