@@ -1,907 +1,918 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
 * {
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    z-index: 1;
-    }
-    
-    :root {
-    --navbar-height: 35px;
-    }
-    
-    body {
-    background-color: transparent;
-    position: relative;
-    z-index: -1;
-    }
-    
-    body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: #fff;
-    height: 100vh;
-    }
-    
-    nav {
-    padding: 10px 0;
-    width: 100vw;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    z-index: 2;
-    height: max-content;
-    transition: opacity 300ms ease-out;
-    }
-    
-    .navbar {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    gap: 30px;
-    }
-    
-    
-    .navbar a {
-    color: #9a8b8b;
-    font-size: 1.2rem;
-    text-decoration: none;
-    font-family:  "Josefin Sans", sans-serif;;
-    }
-    
-    .navbar a {
-    position: relative;
-    }
-    
-    .navbar a:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffd700;
-    transition: width 0.3s ease-in-out;
-    }
-    
-    .navbar a:hover:after {
-    width: 100%;
-    }
-    
-    .header-left{
-      height: 50px;
-      padding-left: 40px;
-    }
-    
-    .navbar .current-nav {
-    color: #ffffff;
-    }
-    
-    .home-container {
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background-color: #1b1b1b;
-    }
-    
-    
-    
-    .first-frame {
-    width: calc(100vw - 300px);
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    }
-    
-    .title-container {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-    
-    .main-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    }
-    
-    .resto-name {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 4.5rem;
-    color: #ffff;
-    font-weight: 700;
-    text-shadow: 2px 2px #254653;
-    }
-    
-    .description1 {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.6rem;
-    }
-    
-    .description2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1rem;
-    }
-    
-    .line {
-    width: 20px;
-    height: 3px;
-    background-color: #fff;
-    }
-    
-    #viewMore {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    padding: 3px 10px;
-    border: none;
-    background-color: #fdd691;
-    color: #000000;
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 600;
-    transition: transform 300ms ease;
-    font-size: 1rem;
-    }
-    
-    #viewMore:hover {
-    transform: translateY(-10px);
-    }
-    
-    .category-container li a {
-    transition:transform 300ms ease;
-    }
-    
-    .category-container li a:hover{
-    transform: translateY(-10px);
-    }
-    
-    #mainpic-container {
-    width: 45vw;
-    height: 45vw;
-    max-width: 500px; 
-    max-height: 500px;
-    min-width: 200px; 
-    min-height: 200px;
-    position: absolute;
-    right: 8vw;
-    bottom: 15vh;
-    z-index: 2;
-    }
-    
-    
-    
-    #mainShape {
-    width: 550px;
-    height: 550px;
-    position: absolute;
-    right: 0vw;
-    bottom: 0vw;
-    background-color: #ffd700;
-    z-index: 1;
-    clip-path: circle(69.9% at 71% 94%);
-    }
-    
-    #mainPic {
-      width: 100%;
-      height: 100%;
-    }
-    
-    #bigCircle,
-    #smallCircle {
-    background-color: transparent;
-    border: 2px solid #fdd691;
-    border-radius: 50%;
-    z-index: 1;
-    position: absolute;
-    opacity: 0.5;
-    top: 70%;
-    }
-    #bigCircle {
-    width: 50px;
-    height: 50px;
-    left: -70px;
-    }
-    
-    #smallCircle {
-    width: 30px;
-    height: 30px;
-    left: -120px;
-    top: 80%;
-    }
-    
-    #home-bg {
-    height: 100%;
-    width: 100%;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
-    }
-    
-    #home-bg {
-    background-image: url("../images/bg/urlBg.jpg");
-    background-size: cover;
-    opacity: 0.3;
-    }
-    
-    .menu-container {
-    min-height: max-content;
-    background-color: #fff;
-    position: relative;
-    }
-    
-    #menu-bg{
-    background: url('../images/bg/secondUrlBg.jpg');
-    background-size: cover;
-    opacity: 0.5;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    position: absolute;
-    }
-    
-    
-    
-    #viewMenu{
-    text-align: center;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 3.5rem;
-    color: #000;
-    height: 35vh;
-    width: 100%;
-    opacity: 0.9;
-    margin-bottom: 30px;
-    background: url("../images/bg/filipino-food.png");
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-    }
-    
-    #viewMenu div{
-    color: white; 
-    text-shadow: 3px 3px #254653;
-    -webkit-text-stroke: 1.5px #254653;
-    font-weight: 700;
-    }
-    
-    .category-container {
-    display: flex;
-    gap: 25px;
-    justify-content: center;
-    align-self: center;
-    flex-wrap: wrap;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    }
-    
-    .category-container li {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    }
-    
-    .category-container li div, .category-container li a{
-    font-family: "Josefin Sans", sans-serif;
-    }
-    
-    .category-container li div {
-    color: #000;
-    font-size: 1.2rem;
-    font-weight: 600px;
-    }
-    
-    .category-image-container{
-    width: 250px;
-    height: 300px;
-    overflow: hidden;
-    }
-    
-    .category-container li img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 30px;
-    }
-    
-    .category-container li a {
-    background-color: #1b1b1b;
-    color: #ffd700;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  }
+  
+  
+  body {
+  background-color: transparent;
+  position: relative;
+  z-index: -1;
+  }
+  
+  body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  height: 100vh;
+  }
+  
+  
+  
+  
+  header {
+  padding: 10px 0;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  height: max-content;
+  transition: opacity 300ms ease-out;
+  }
+  
+  .logo{
     width: 100px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 7px;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 10px;
-    }
-    
-    
-    
-    .menuOpen{
-    display: none;
-    box-sizing: border-box;
-    padding: 0px 100px 30px 100px;
-    padding-top: calc(10px + var(--navbar-height));
-    }
-    
-    .back{
-    display: flex;
-    align-items: center;
-    gap:5px;
-    width: 80px;
-    justify-content: center;
-    transition: all ease 1s;
-    }
-    
-    .back div:nth-child(2){
-    color: #000;
-    font-family: "Josefin Sans", sans-serif;
-    }
-    
-    .menu-icon{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    }
-    
-    .foods {
-    display: flex;
-    flex-wrap: wrap; 
-    width: 100%;
-    flex-basis: 33.33%; 
-    }
-    
-    
-    
-    
-    .foods li{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    margin: 10px;
-    width: 300px;
-    margin-bottom: 20px;
-    }
-    
-    
-    
-    .name-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    }
-    
-    .name-container::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 3px;
-    transition: all 1s;
-    }
-    
-    
-    
-    .name-container:hover:after, .name-hover::after{
-    width: 100%;
-    background-color:  #E2725B;
-    }
-    
-    
-    
-    .menu-food-name{
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 700;
-    }
-    
-    .menu-food-price, .menu-food-description{
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
-    }
-    
-    
-    .menu-food-price{
-    margin-left: auto;
-    font-size: 1rem;
-    }
-    
-    .menu-food-description{
-    font-size: .9rem;
-    }
-    
-    
-    
-    .menu-food-image{
+    padding-left: 10px;
+  }
+  
+  
+  
+  .invisible{
+    opacity: 0;
+    width: 100px;
+    padding-right: 10px;
+  }
+  
+   .navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  }
+  
+  
+  
+  .navbar a {
+  color: #9a8b8b;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-family:  "Josefin Sans", sans-serif;;
+  }
+  
+  .navbar a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover:after {
+  width: 100%;
+  } 
+  
+  .navbar .current-nav {
+  color: #ffffff;
+  }
+  
+  .home-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #1b1b1b;
+  }
+  
+  
+  
+  .first-frame {
+  width: calc(100vw - 300px);
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  }
+  
+  .title-container {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  }
+  
+  .resto-name {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 4.5rem;
+  color: #ffff;
+  font-weight: 700;
+  text-shadow: 2px 2px #254653;
+  }
+  
+  .description1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  }
+  
+  .description2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1rem;
+  }
+  
+  .line {
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  }
+  
+  #viewMore {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 3px 10px;
+  border: none;
+  background-color: #fdd691;
+  color: #000000;
+  font-family: "Kameron", serif;
+  font-weight: 600;
+  transition: transform 300ms ease;
+  font-size: 1rem;
+  }
+  
+  #viewMore:hover {
+  transform: translateY(-10px);
+  }
+  
+  .category-container li a {
+  transition:transform 300ms ease;
+  }
+  
+  .category-container li a:hover{
+  transform: translateY(-10px);
+  }
+  
+  #mainpic-container {
+  width: 45vw;
+  height: 45vw;
+  max-width: 500px; 
+  max-height: 500px;
+  min-width: 200px; 
+  min-height: 200px;
+  position: absolute;
+  right: 8vw;
+  bottom: 15vh;
+  z-index: 2;
+  }
+  
+  
+  
+  #mainShape {
+  width: 550px;
+  height: 550px;
+  position: absolute;
+  right: 0vw;
+  bottom: 0vw;
+  background-color: #ffd700;
+  z-index: 1;
+  clip-path: circle(69.9% at 71% 94%);
+  }
+  
+  #mainPic {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    }
-    
-    .menu-food-image-container{
-    height: 210px;
-    width: 100%;
-    overflow: hidden;
-    }
-    
-    .menu-food-image-container img, .category-image-container img{
-      transition: transform .5s ease;
-    }
-    
-    .menu-food-image-container:hover img, .category-image-container:hover img{
-      transform: scale(1.5);
-    }
-    
-    .menu-food-name, .menu-food-price, .menu-food-description{
-    color: #000;
-    }
-    
-    
-    .back:hover div{
-    transform: translateX(-10px);
-    }
-    
-    #starters, #main-courses{
-    display: none;
-    }
-    
-    
-    .additional-container{
-    height:400px;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: url('../images/bg/story.webp');
-    position: relative;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    background-size: cover;
-    }
-    
-    
-    
-    .additional-container div{
-    font-family: "Josefin Sans", sans-serif;
-    color: #fff;
-    font-weight: bolder;
-    font-size: 3.5rem;
-    color: white; 
-    text-shadow: 3px 3px #254653;
-    -webkit-text-stroke: 1.5px #254653;
-    }
-    #contact-container {
-    padding: 30px 0px 50px 0px;
-    position: relative;
-    box-sizing: border-box;
-    overflow: hidden; 
-    height: max-content;
-    width: 100%;
-    }
-    
-    
-    
-    #contact-bg{
-    width: 100%;
-    background: url('../images/bg/contactBg.jpg');
-    background-size: cover;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    opacity: 0.8;
-    z-index: -1;
-    }
-    
-    
-    .contact-whole{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    }
-    
-    
-    .contact-text{
-    text-align: center;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 3.5rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-    }
-    
-    .information li{
-    margin-bottom: 20px;
-    }
-    
-    .info-name{
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    }
-    
-    .info-details{
-    font-family: "Josefin Sans", sans-serif;
-    font-size: .8rem;
-    font-weight: 400;
-    }
-    
-    .contact-left ul li, .sched-date li {
+  }
+  
+  #bigCircle,
+  #smallCircle {
+  background-color: transparent;
+  border: 2px solid #fdd691;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.5;
+  top: 70%;
+  }
+  #bigCircle {
+  width: 50px;
+  height: 50px;
+  left: -70px;
+  }
+  
+  #smallCircle {
+  width: 30px;
+  height: 30px;
+  left: -120px;
+  top: 80%;
+  }
+  
+  #home-bg {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  }
+  
+  #home-bg {
+    background-image: url("../images/bg/urlBg.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  }
+  
+  .menu-container {
+  min-height: max-content;
+  background-color: #fff;
+  position: relative;
+  }
+  
+  #menu-bg{
+  background: url('../images/bg/secondUrlBg.jpg');
+  background-size: cover;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  }
+  
+  
+  
+  #viewMenu{
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3.5rem;
+  color: #000;
+  height: 35vh;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  background: url("../images/bg/filipino-food.png");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  }
+  
+  #viewMenu div{
+  color: white; 
+  text-shadow: 3px 3px #254653;
+  -webkit-text-stroke: 1.5px #254653;
+  font-weight: 700;
+  }
+  
+  .category-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-self: center;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  }
+  
+  .category-container li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  }
+  
+  .category-container li div, .category-container li a{
+  font-family: "Josefin Sans", sans-serif;
+  }
+  
+  .category-container li div {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 600px;
+  }
+  
+  .category-image-container{
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  }
+  
+  .category-container li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px;
+  }
+  
+  .category-container li a {
+  background-color: #1b1b1b;
+  color: #ffd700;
+  width: 100px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 7px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  }
+  
+  
+  
+  .menuOpen{
+  display: none;
+  box-sizing: border-box;
+  padding: 0px 100px 30px 100px;
+  padding-top: 40px;
+  }
+  
+  .back{
+  display: flex;
+  align-items: center;
+  gap:5px;
+  width: 80px;
+  justify-content: center;
+  transition: all ease 1s;
+  }
+  
+  .back div:nth-child(2){
+  color: #000;
+  font-family: "Josefin Sans", sans-serif;
+  }
+  
+  .menu-icon{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  }
+  
+  .foods {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+  flex-basis: 33.33%; 
+  }
+  
+  
+  
+  
+  .foods li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+  }
+  
+  
+  
+  .name-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  }
+  
+  .name-container::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  transition: all 1s;
+  }
+  
+  
+  
+  .name-container:hover:after, .name-hover::after{
+  width: 100%;
+  background-color:  #E2725B;
+  }
+  
+  
+  
+  .menu-food-name{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  }
+  
+  .menu-food-price, .menu-food-description{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  }
+  
+  
+  .menu-food-price{
+  margin-left: auto;
+  font-size: 1rem;
+  }
+  
+  .menu-food-description{
+  font-size: .9rem;
+  }
+  
+  
+  
+  .menu-food-image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  }
+  
+  .menu-food-image-container{
+  height: 210px;
+  width: 100%;
+  overflow: hidden;
+  }
+  
+  .menu-food-image-container img, .category-image-container img{
+    transition: transform .5s ease;
+  }
+  
+  .menu-food-image-container:hover img, .category-image-container:hover img{
+    transform: scale(1.5);
+  }
+  
+  .menu-food-name, .menu-food-price, .menu-food-description{
+  color: #000;
+  }
+  
+  
+  .back:hover div{
+  transform: translateX(-10px);
+  }
+  
+  #starters, #main-courses{
+  display: none;
+  }
+  
+  
+  .additional-container{
+  height:400px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: url('../images/bg/story.webp');
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  }
+  
+  
+  
+  .additional-container div{
+  font-family: "Josefin Sans", sans-serif;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 3.5rem;
+  color: white; 
+  text-shadow: 3px 3px #254653;
+  -webkit-text-stroke: 1.5px #254653;
+  }
+  #contact-container {
+  padding: 30px 0px 50px 0px;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden; 
+  height: max-content;
+  width: 100%;
+  }
+  
+  
+  
+  #contact-bg{
+  width: 100%;
+  background: url('../images/bg/contactBg.jpg');
+  background-size: cover;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  opacity: 0.8;
+  z-index: -1;
+  }
+  
+  
+  .contact-whole{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  }
+  
+  
+  .contact-text{
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+  }
+  
+  .information li{
+  margin-bottom: 20px;
+  }
+  
+  .info-name{
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  }
+  
+  .info-details{
+  font-family: "Josefin Sans", sans-serif;
+  font-size: .8rem;
+  font-weight: 400;
+  }
+  
+  .contact-left ul li, .sched-date li {
+  list-style: none;
+  }
+  
+  .info-socialmedia{
+  display: flex;
+  gap: 10px
+  }
+  
+  .info-socialmedia-bg{
+  background-color: #FDD691;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .book-box{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  }
+  
+  .book-box div{
+  margin-bottom: 5px;
+  }
+  
+  .book-box div:first-child{
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  }
+  
+  
+  .book-box div input{
+  height: 35px;
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+  }
+  
+  
+  .book-box button{
+  height: 25px;
+  color: #000;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #FDD691;
+  width: 40%;
+  font-weight: 700;
+  font-size: .65rem;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  align-items: center;
+  }
+  
+  .book-button-container{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  }
+  
+  
+  #sched ul{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  
+  
+  #sched{
+  gap: 10px;
+  background-color: #ffd700;
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  box-sizing: border-box;
+  padding: 20px 50px 20px 50px;
+  }
+  
+  #sched ul{
+  gap: 5px;
+  }
+  
+  #sched div, .sched-date li{
+  font-family: "Josefin Sans", sans-serif;
+  color: #000;
+  }
+  
+  #sched div:first-child{
+  font-size: 1rem;
+  font-weight: 600;
+  }
+  
+  .sched-date li{
+  font-size: .9rem;
+  }
+  
+  
+  footer{
+  position: relative;
+  height: 100px;
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: center;
+  }
+  
+  .credit{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  }
+  
+  .credit p{
+  font-family: "Josefin Sans", sans-serif;
+  }
+  
+  .navbar-button, .navbar-close{
+  display: none;
+  }
+  
+  .navbar-button li{
     list-style: none;
-    }
-    
-    .info-socialmedia{
-    display: flex;
-    gap: 10px
-    }
-    
-    .info-socialmedia-bg{
-    background-color: #FDD691;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .book-box{
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    }
-    
-    .book-box div{
-    margin-bottom: 5px;
-    }
-    
-    .book-box div:first-child{
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    }
-    
-    
-    .book-box div input{
-    height: 35px;
-    width: 100%;
-    padding: 3px;
-    box-sizing: border-box;
-    }
-    
-    
-    .book-box button{
-    height: 25px;
-    color: #000;
-    font-family: "Josefin Sans", sans-serif;
-    background-color: #FDD691;
-    width: 40%;
-    font-weight: 700;
-    font-size: .65rem;
-    display: flex;
-    justify-content: center;
-    outline: none;
-    border: none;
-    border-radius: 3px;
-    align-items: center;
-    }
-    
-    .book-button-container{
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-    }
-    
-    
-    #sched ul{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    }
-    
-    
-    
-    #sched{
-    gap: 10px;
-    background-color: #ffd700;
-    width: max-content;
-    height: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    box-sizing: border-box;
-    padding: 20px 50px 20px 50px;
-    }
-    
-    #sched ul{
-    gap: 5px;
-    }
-    
-    #sched div, .sched-date li{
-    font-family: "Josefin Sans", sans-serif;
-    color: #000;
-    }
-    
-    #sched div:first-child{
-    font-size: 1rem;
-    font-weight: 600;
-    }
-    
-    .sched-date li{
-    font-size: .9rem;
-    }
-    
-    
-    footer{
-    position: relative;
-    height: 100px;
-    background-color: #1b1b1b;
-    display: flex;
-    justify-content: center;
-    }
-    
-    .credit{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    }
-    
-    .credit p{
-    font-family: "Josefin Sans", sans-serif;
-    }
-    
-    .navbar-button, .navbar-close{
+  }
+  
+  
+  
+  @media screen and (min-width: 1000px) and (max-width: 1250px){
+  
+  
+  #mainShape{
+    width: 50vw;
+    height: 50vh;
+    max-width: 500px;
+    max-height: 500px;
+  }
+  
+  #mainpic-container{
+    right: 5vw;
+    bottom: 10vh;
+  }
+  
+  .title-container{
+    left: 25%;
+  }
+  }
+  
+  
+  @media screen and (max-width: 1000px) {
+  
+  
+  
+  
+  #bigCircle, #smallCircle{
     display: none;
-    }
+  }
+  
+  #mainShape{
+    clip-path: none;
+    animation: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40vh;
+  }
+  
+  .title-container{
+    left: 50%;
+    top: 75%;
+    width: 100vw;
+  }
+  
+  #mainpic-container{
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    top: 40vh;
+    width: 90vw;
+    height: 50vh;
+    max-width: 500px;
+    max-height: 500px;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  
+  .contact-whole{
+    gap: 30px;
+  }
+  
+  .logo{
+    display: flex;
+    align-items: center;
     
-    .navbar-button li{
-      list-style: none;
-    }
-    
-    
-    
-    @media screen and (min-width: 1000px) and (max-width: 1250px){
-    
-    
-    #mainShape{
-      width: 50vw;
-      height: 50vh;
-      max-width: 500px;
-      max-height: 500px;
-    }
-    
-    #mainpic-container{
-      right: 5vw;
-      bottom: 10vh;
-    }
-    
-    .title-container{
-      left: 25%;
-    }
-    }
-    
-    
-    @media screen and (max-width: 1000px) {
-    
-    
-    
-    
-    
-    .navbar{
-      background-color: #fff;
-      flex-direction: column;
-      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-      gap: 0;
-    }
-    
-    .navbar a{
-      color: #1B1B1B;
-      font-size: 1.2rem;
-      font-weight: 700;
-      display: flex;
-      padding: 15px 20px;
-      text-transform: uppercase;
-    }
-    
-    
-    
-    .navbar a:first-child, .navbar a:nth-child(2){
-      border-bottom: 2px solid #b0a5a5;
-    }
-    
-    #bigCircle, #smallCircle{
-      display: none;
-    }
-    
-    #mainShape{
-      clip-path: none;
-      animation: none;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 40vh;
-    }
-    
-    .title-container{
-      left: 50%;
-      top: 75%;
-      width: 100vw;
-    }
-    
-    #mainpic-container{
-      right: 0;
-      bottom: 0;
-      left: 50%;
-      top: 40vh;
-      width: 90vw;
-      height: 50vh;
-      max-width: 500px;
-      max-height: 500px;
-      transform: translate(-50%, -50%);
-    }
-    
-    
-    
-    .contact-whole{
-      gap: 30px;
-    }
-    
-    .header-left{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding-left: 0;
-      padding: 10px;
-    }
-    
-    
-    nav{
-      background-color: #fff;
-      padding: 0;
-    }
-    
-    
-    .navOpen{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 0;
-      padding-left: 10px;
-      padding-right: 10px;
-      box-sizing: border-box;
-      gap: 0;
-    }
-    
-    .logo{
-      display: flex;
-      align-items: center;
-      
-    }
-    
-    .navbar-button{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 32px;
-      height: 35px;
-      gap: 7px;
-    }
-    
-    .navbar-button li{
-      background-color: #1B1B1B;
-      border-radius: 2px;
-      height: 4px;
-    }
-    .navbar{
-      position: static;
-      display: none;
-    }
-    }
-    
-    
-    @media screen  and (max-width: 767px) {
-    
-    .additional-container div{
-      text-shadow: none;
-      -webkit-text-stroke: 0;
-      text-align: center;
-    }
-    
-    #mainShape{
-      display: none;
-    }
-    
-    .additional-container, #viewMenu{
-      height: 300px;
-    }
-    
-    .additional-container{
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-    
-    .additional-container div{
-      font-size: 1.5rem;
-    }
-    
-    #viewMenu div{
-      font-size: 2.5rem;
-    }
-    
-    .category-container li{
-      width: 80%;
-    }
-    
-    
-    
-    .category-container li img{
-      border-radius: 5px;
-    }
-    
-    .category-image-container{
-      width: 100%;
-      height: 300px;
-    }
-    
-    .menuOpen{
-      padding-left: 20px;
-      padding-right: 20px;
-    } 
-    .foods li{
-      width: calc(100vw - 40px);
-    }
-    
-    .menu-food-image-container{
-      height: 300px;
-    }
-    
-    
-    
-    .foods {
-      flex-wrap: nowrap;
-      flex-direction: column;
-      align-items: center;
-    }
-    }
-    
-    
-    @media screen and (max-width: 400px) {
-    .resto-name{
-      font-size: 3rem;
-    }
-    
-    .description1{
-      font-size: 1.2rem;
-    }
-    
-    .description2, #viewMore{
-      font-size: .8rem;
-    }
-    }
-    
+  }
+  
+  
+  }
+  
+  
+  @media screen  and (max-width: 767px) {
+  
+  body{
+    overflow: hidden;
+  }
+  
+  header{
+    background-color: #fff;
+    box-shadow: 9px 13px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .navOpen2{
+    width: 100%;
+  }
+  .navOpen{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 0;
+  }
+  
+  .logo, .navbar a{
+    padding-left: 15px;
+  }
+  
+  .navbar-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .navbar-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 32px;
+    height: 35px;
+    gap: 7px;
+    margin-right: 10px;
+  }
+  
+  .invisible{
+    display: none;
+  }
+  
+  .navbar{
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid gray;
+    gap:0;
+    box-sizing: border-box
+  }
+  
+  .navbar a {
+    color: #1B1B1B;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #b0a5a5;
+  }
+  
+  .navbar a:nth-child(3){
+    border-bottom: none;
+  }
+  
+  .navbar-button li{
+    background-color: #1B1B1B;
+    border-radius: 2px;
+    height: 4px;
+  }
+  
+  .additional-container div{
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+    text-align: center;
+  }
+  
+  #mainShape{
+    display: none;
+  }
+  
+  .additional-container, #viewMenu{
+    height: 300px;
+  }
+  
+  .additional-container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .additional-container div{
+    font-size: 1.5rem;
+  }
+  
+  #viewMenu div{
+    font-size: 2.5rem;
+  }
+  
+  .category-container li{
+    width: 80%;
+  }
+  
+  
+  
+  .category-container li img{
+    border-radius: 5px;
+  }
+  
+  .category-image-container{
+    width: 100%;
+    height: 300px;
+  }
+  
+  .menuOpen{
+    padding-left: 20px;
+    padding-right: 20px;
+  } 
+  .foods li{
+    width: calc(100vw - 40px);
+  }
+  
+  .menu-food-image-container{
+    height: 300px;
+  }
+  
+  
+  
+  .foods {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  }
+  
+  
+  @media screen and (max-width: 400px) {
+  .resto-name{
+    font-size: 3rem;
+  }
+  
+  .description1{
+    font-size: 1.2rem;
+  }
+  
+  .description2, #viewMore{
+    font-size: .8rem;
+  }
+  }
+  

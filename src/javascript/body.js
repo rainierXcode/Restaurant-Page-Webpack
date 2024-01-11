@@ -1,5 +1,5 @@
 
-import {nav} from './nav.js'; 
+import {header} from './header.js'; 
 import {homeContainer} from './home.js'; 
 import { menuContainer} from './menu.js'
 import {contactContainer} from './contact.js'
@@ -65,7 +65,7 @@ function footer(){
 }
 
 export function body() {
-     document.body.appendChild(nav());
+     document.body.appendChild(header());
      document.body.appendChild(homeContainer());
      document.body.appendChild(additionalContainer())
      document.body.appendChild(menuContainer());
