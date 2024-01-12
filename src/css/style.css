@@ -764,11 +764,6 @@
   
   
   @media screen  and (max-width: 767px) {
-  
-  body{
-    overflow: hidden;
-  }
-  
   header{
     background-color: #fff;
     box-shadow: 9px 13px 10px rgba(0, 0, 0, 0.1);
